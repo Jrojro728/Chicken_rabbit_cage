@@ -12,24 +12,24 @@ int afor(int x, int y)
 
 int main()
 {
-    int call;
-    int temp;
+    int call{};
     int a;
+    int jiao{};
     int x{};
     int y{};
     int Normal_exit{};
 
 
     std::cout << "输入脚的总数：";
-    std::cin >> temp;
-    const int jiao{ temp };
+    std::cin >> jiao;
 
     std::cout << "输入有多少头：";
     std::cin >> a;
 
     x = a;
-    for (call = 0; call < 10000; call++)
+    for (;;)
     {
+        int temp{0};
         temp = afor(x, y);
         if (x < 0)
         {
@@ -47,7 +47,9 @@ int main()
         {
             x -= 1;
             y += 1;
+
         }
+        ++call;
     }
     if (Normal_exit != 1)
     {
